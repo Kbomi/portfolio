@@ -50,7 +50,7 @@ import BackgroundJSON from './background.json'
 }
 .lottie-wrap {
   position: relative;
-  width: 50%;
+  width: 40%;
   max-width: 465px;
   height: 600px;
   overflow: hidden;
