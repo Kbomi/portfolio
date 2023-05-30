@@ -7,7 +7,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import CareerItem from './CareerItem.vue'
 import data from './career.json'
 

@@ -19,27 +19,14 @@
   </li>
 </template>
 
-<script lang="ts">
-import { type PropType } from 'vue'
-import { type CareerList } from './CareerItemDetail.vue'
+<script>
 import CareerItemDetail from './CareerItemDetail.vue'
-import {
-  BIconCaretRightFill
-} from 'bootstrap-icons-vue'
-
-interface Career {
-  date: string
-  company: string
-  detail: {
-    text: string
-    list: CareerList[]
-  }
-}
+import { BIconCaretRightFill } from 'bootstrap-icons-vue'
 
 export default {
   props: {
     career: {
-      type: Object as PropType<Career>,
+      type: Object,
       required: true
     }
   },

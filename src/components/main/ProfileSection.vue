@@ -25,7 +25,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import { Vue3Lottie } from 'vue3-lottie'
 import ChickenJSON from './chicken.json'
 import BackgroundJSON from './background.json'

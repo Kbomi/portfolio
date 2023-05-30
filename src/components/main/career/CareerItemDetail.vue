@@ -9,20 +9,11 @@
   </li>
 </template>
 
-<script lang="ts">
-import { type PropType } from 'vue'
-
-export interface CareerList {
-  title: string
-  date: string
-  url?: string
-  desc: string
-}
-
+<script>
 export default {
   props: {
     item: {
-      type: Object as PropType<CareerList>,
+      type: Object,
       required: true
     }
   }

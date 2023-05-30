@@ -36,7 +36,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import {
   BIconEnvelope,
   BIconGithub,
