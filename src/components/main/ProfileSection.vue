@@ -16,8 +16,8 @@
       <Vue3Lottie
         class="background"
         :animationData="BackgroundJSON"
-        :width="465"
-        :height="840"
+        :width="lottieSize.width"
+        :height="lottieSize.height"
         :speed="0.4"
       />
       <Vue3Lottie class="chicken" :animationData="ChickenJSON" :height="200" :width="200" />
@@ -37,13 +37,33 @@ export default {
   data() {
     return {
       ChickenJSON,
-      BackgroundJSON
+      BackgroundJSON,
+      lottieSize: {
+        width: 465,
+        height: 850
+      }
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth <= 900) {
+        this.lottieSize.height = 1100
+      } else {
+        this.lottieSize.height = 850
+      }
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .profile {
   display: flex;
   align-items: center;
@@ -52,24 +72,24 @@ export default {
 }
 .text {
   width: 50%;
-}
-.text h1 {
-  font-size: 2rem;
-  font-weight: normal;
-}
-.text p {
-  margin-top: 1rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  p {
+    margin-top: 1rem;
+  }
 }
 .lottie-wrap {
   position: relative;
   width: 40%;
   max-width: 465px;
-  height: 600px;
+  height: 480px;
   overflow: hidden;
 }
 .background {
   position: absolute;
-  top: 0;
+  top: -100px;
   left: 0;
   width: 100%;
 }
@@ -78,5 +98,37 @@ export default {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* 태블릿 */
+@include tablet {
+  .profile {
+    position: relative;
+    display: block;
+    padding-top: 8rem;
+  }
+  .text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 99;
+  }
+  .lottie-wrap {
+    width: 100%;
+    max-width: 100%;
+    height: 520px;
+  }
+  .chicken {
+    bottom: -30px;
+  }
+}
+
+/* 모바일 */
+@include mobile {
+  .profile {
+    padding-top: 3rem;
+  }
 }
 </style>
