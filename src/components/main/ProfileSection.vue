@@ -1,9 +1,3 @@
-<script setup lang="ts">
-import { Vue3Lottie } from 'vue3-lottie'
-import ChickenJSON from './chicken.json'
-import BackgroundJSON from './background.json'
-</script>
-
 <template>
   <section class="profile">
     <div class="text">
@@ -30,6 +24,24 @@ import BackgroundJSON from './background.json'
     </div>
   </section>
 </template>
+
+<script lang="ts">
+import { Vue3Lottie } from 'vue3-lottie'
+import ChickenJSON from './chicken.json'
+import BackgroundJSON from './background.json'
+
+export default {
+  components: {
+    Vue3Lottie
+  },
+  data() {
+    return {
+      ChickenJSON,
+      BackgroundJSON
+    }
+  }
+}
+</script>
 
 <style scoped>
 .profile {

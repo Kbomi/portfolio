@@ -10,7 +10,7 @@ import { BootstrapIconsPlugin } from 'bootstrap-icons-vue'
 const app = createApp(App)
 
 app.use(router)
-app.use(Vue3Lottie, { name: 'Vue3Lottie' })
+app.use(Vue3Lottie)
 app.use(BootstrapIconsPlugin)
 
 app.mount('#app')
