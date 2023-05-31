@@ -31,7 +31,12 @@ body {
   color: var(--color-text);
 }
 
-/* 모바일 */
+@include tablet {
+  body {
+    font-size: 15px;
+  }
+}
+
 @include mobile {
   body {
     font-size: 14px;

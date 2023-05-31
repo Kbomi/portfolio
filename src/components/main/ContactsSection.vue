@@ -20,7 +20,7 @@
       <li>
         <a href="https://velog.io/@93rlaqhal" target="_blank">
           <BIconCodeSquare />
-          <span>velog.io/@93rlaqhal<br />(기술 블로그만 따로 분리해서 작성중입니다.)</span>
+          <span>velog.io/@93rlaqhal<br />- 기술 블로그만 따로 분리해서 작성중입니다.</span>
         </a>
       </li>
       <li>
@@ -28,7 +28,7 @@
           <BIconEmojiSunglasses />
           <span
             >네이버 블로그<br />
-            저의 얘기가 담긴 개인 블로그입니다.</span
+            - 저의 얘기가 담긴 개인 블로그입니다.</span
           >
         </a>
       </li>
@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 ul {
   display: flex;
   justify-content: center;
@@ -77,5 +77,21 @@ svg {
 }
 span {
   line-height: 20px;
+}
+
+@include tablet {
+  li {
+    width: 48%;
+  }
+}
+
+@include mobile {
+  ul {
+    display: block;
+    padding-left: 20px;
+  }
+  li {
+    width: 100%;
+  }
 }
 </style>

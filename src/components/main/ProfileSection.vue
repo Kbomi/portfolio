@@ -6,10 +6,16 @@
         <b>김보미</b>
       </h1>
       <p>
-        퍼블리싱 경력 4년, 프론트엔드 1년차 개발자 김보미입니다. 저는 UI/UX 및 JavaScript에 대해
-        관심이 많습니다. 기본적으로 HTML, CSS, JavaScript로 퍼블리싱 가능합니다. (웹 표준 준수,
-        크로스브라우징 고려) Vue.js, React.js와 Storybook을 사용한 경험이 있습니다. UI개발에 관심이
-        많고 디자인시스템 구축 경험이 있습니다.
+        퍼블리싱 경력 4년, 프론트엔드 1년차 개발자 김보미입니다.
+        <br />
+        저는 UI/UX 및 JavaScript에 대해 관심이 많습니다.
+        <br />
+        기본적으로 HTML, CSS, JavaScript로 퍼블리싱 가능합니다.
+        <br />
+        (웹 표준 준수, 크로스브라우징 고려)
+        <br />
+        Vue.js, React.js와 Storybook을 사용한 경험이 있습니다.
+        <br />UI개발에 관심이 많고 디자인시스템 구축 경험이 있습니다.
       </p>
     </div>
     <div class="lottie-wrap">
@@ -53,11 +59,13 @@ export default {
   },
   methods: {
     handleResize() {
+      // tablet
       if (window.innerWidth <= 900) {
         this.lottieSize.height = 1100
-      } else {
-        this.lottieSize.height = 850
+        return
       }
+      // pc
+      this.lottieSize.height = 850
     }
   }
 }
@@ -121,6 +129,7 @@ export default {
     height: 520px;
   }
   .chicken {
+    left: 70%;
     bottom: -30px;
   }
 }
@@ -129,6 +138,18 @@ export default {
 @include mobile {
   .profile {
     padding-top: 3rem;
+  }
+  .text {
+    padding: 0 2rem;
+  }
+  .lottie-wrap {
+    height: 400px;
+  }
+  .background {
+    top: -220px;
+  }
+  .chicken {
+    left: 50%;
   }
 }
 </style>

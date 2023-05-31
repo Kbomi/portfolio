@@ -25,19 +25,32 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 ul.career-list {
   position: relative;
   margin-top: 1rem;
   padding-left: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 1px;
+    height: calc(100% - 20px);
+    background: $c-green-dark;
+  }
 }
-ul.career-list::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  width: 1px;
-  height: calc(100% - 20px);
-  background: var(--vt-c-green-dark);
+
+@include mobile {
+  ul.career-list {
+    padding-left: 20px;
+
+    &::before {
+      left: 7px;
+    }
+    &.sub::before {
+      display: none;
+    }
+  }
 }
 </style>

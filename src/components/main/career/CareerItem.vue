@@ -11,7 +11,7 @@
         프로젝트 내용
       </button>
       <Transition name="slide-fade">
-        <ul v-if="showContent" class="career-list">
+        <ul v-if="showContent" class="career-list sub">
           <CareerItemDetail v-for="item in career.detail.list" :key="item.title" :item="item" />
         </ul>
       </Transition>
@@ -47,24 +47,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 li {
   position: relative;
   display: flex;
   padding-left: 2rem;
-}
-li::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--vt-c-green-dark);
-}
-li + li {
-  margin-top: 2rem;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: $c-green-dark;
+  }
+  & + li {
+    margin-top: 2rem;
+  }
 }
 .date {
   min-width: 150px;
@@ -72,9 +72,9 @@ li + li {
 }
 .desc {
   font-size: 0.875rem;
-}
-.desc b {
-  font-size: 1.125rem;
+  b {
+    font-size: 1.125rem;
+  }
 }
 .text {
   display: inline-block;
@@ -98,19 +98,17 @@ button svg {
   height: 12px;
   margin-right: 0.375rem;
   transition: transform 0.3s ease-out;
-}
-button svg.on {
-  transform: rotate(90deg);
-  transition: transform 0.3s ease-out;
+  &.on {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-out;
+  }
 }
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
-
 .slide-fade-leave-active {
   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
-
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(20px);
@@ -118,5 +116,22 @@ button svg.on {
 }
 ul {
   padding: 0;
+}
+
+@include tablet {
+  .date {
+    min-width: 128px;
+  }
+}
+
+@include mobile {
+  li {
+    display: block;
+    padding-left: 0;
+    &::before {
+      top: 8px;
+      left: -15px;
+    }
+  }
 }
 </style>
