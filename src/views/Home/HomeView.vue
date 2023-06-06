@@ -1,6 +1,7 @@
 <script setup>
 import Profile from '../../components/main/ProfileSection.vue'
-import Career from '../../components/main/career/Career.vue'
+import Project from '../../components/main/ProjectSection.vue'
+import Career from '../../components/main/career/CareerSection.vue'
 import Contacts from '../../components/main/ContactsSection.vue'
 import './main.scss'
 </script>
@@ -8,6 +9,7 @@ import './main.scss'
 <template>
   <main>
     <Profile />
+    <Project />
     <Career />
     <Contacts />
   </main>
