@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { setInterceptors } from './common/interceptors'
 
 function apiInstance() {
   const instance = axios.create({
@@ -7,7 +8,7 @@ function apiInstance() {
       'Content-Type': 'application/json;charset=utf-8'
     }
   })
-  return instance
+  return setInterceptors(instance)
 }
 
 export { apiInstance }

@@ -12,7 +12,6 @@
 <script>
 import { getJejuList } from '@/api/jeju.js'
 import JejuCard from '../components/project/JejuCard.vue'
-import { mapActions } from 'vuex'
 
 export default {
   components: {
@@ -55,21 +54,16 @@ export default {
     body.style.removeProperty('background-color')
   },
   methods: {
-    ...mapActions(['setLoading']),
     /**
      * 제주 관광 데이터 load
      */
     async loadData() {
-      this.setLoading(true)
-
       const result = await getJejuList({
         page: this.currentPage
       })
 
       this.data = [...this.data, ...result.items]
       this.totalCount = result.totalCount
-
-      this.setLoading(false)
     },
     /**
      * body 태그 background color 변경
