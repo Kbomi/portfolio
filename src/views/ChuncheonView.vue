@@ -118,4 +118,25 @@ h3 {
   flex-wrap: wrap;
   margin: 1rem 0;
 }
+
+@include mobile {
+  h3 {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .filter {
+    padding: 0 0.25rem;
+    border-bottom: 1px solid transparent;
+    .total {
+      margin-left: 0.5rem;
+    }
+    select {
+      margin-right: 0.5rem;
+    }
+  }
+  .list {
+    padding: 0 0.5rem;
+  }
+}
 </style>

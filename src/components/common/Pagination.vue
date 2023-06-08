@@ -124,6 +124,8 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 2.5rem;
 }
 button {
   width: 30px;
@@ -151,6 +153,27 @@ button {
       border-color: #722f8b;
       font-weight: bold;
       color: #722f8b;
+    }
+  }
+}
+
+@include mobile {
+  .pagination {
+    margin-top: 1rem;
+    padding: 0 1rem 2.5rem 1rem;
+  }
+  button {
+    width: 24px;
+    height: 24px;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+    &.arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
   }
 }

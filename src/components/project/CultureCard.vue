@@ -9,7 +9,7 @@
     <div class="card-text">
       <p class="title">{{ item.cultureNm }}</p>
       <p class="desc">{{ item.info }}</p>
-      <p class="date">시작일: {{ item.startDate }} - 종료일: {{ item.endDate }}</p>
+      <p class="date">시작일: {{ item.startDate }} <span>-</span> 종료일: {{ item.endDate }}</p>
       <p class="address">
         <span>주소: {{ item.newAddr }}</span
         ><button type="button" @click="copyContent(item.newAddr)">복사하기</button>
@@ -57,8 +57,8 @@ export default {
 
 <style scoped lang="scss">
 .card {
-  width: calc(100% / 3 - 0.25rem);
-  margin: 0.125rem;
+  width: calc(100% / 3 - 0.5rem);
+  margin: 0.25rem;
   background: #{$c-white};
   border: 1px solid #{$c-divider-dark-2};
   &-image {
@@ -138,6 +138,40 @@ export default {
     width: 50%;
     font-size: 0.5rem;
     text-align: center;
+  }
+}
+
+@include tablet {
+  .card {
+    width: calc(100% / 2 - 0.5rem);
+  }
+}
+
+@include mobile {
+  .card {
+    width: 100%;
+    margin: 0.5rem;
+    &-image {
+      height: 150px;
+    }
+    &-text {
+      height: calc(100% - 150px);
+      padding: 0.875rem;
+    }
+  }
+  .address {
+    flex-direction: column;
+    align-items: flex-start;
+    button {
+      margin-top: 0.5rem;
+    }
+  }
+  .date {
+    margin-top: 0.25rem;
+    span {
+      display: block;
+      font-size: 0;
+    }
   }
 }
 </style>
