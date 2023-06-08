@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.contacts {
+  padding-bottom: 2rem;
+}
 ul {
   display: flex;
   justify-content: center;

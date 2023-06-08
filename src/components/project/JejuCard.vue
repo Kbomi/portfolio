@@ -1,24 +1,21 @@
 <template>
   <div class="card">
     <div class="card-image">
-      <img
-        src="https://source.unsplash.com/daily"
-        alt="축제와 관련 없습니다. 랜덤 이미지 입니다."
-      />
+      <img :src="item.repPhoto.photoid.thumbnailpath" :alt="item.repPhoto.descseo" />
     </div>
     <div class="card-text">
-      <p class="title">{{ item.cultureNm }}</p>
-      <p class="desc">{{ item.info }}</p>
-      <p class="date">시작일: {{ item.startDate }} <span>-</span> 종료일: {{ item.endDate }}</p>
+      <p class="title">{{ item.title }}</p>
+      <p class="desc">{{ item.introduction }}</p>
       <p class="address">
-        <span>주소: {{ item.newAddr }}</span
+        <span>주소: {{ item.roadaddress }}</span
         ><button type="button" @click="copyContent(item.newAddr)">복사하기</button>
       </p>
-      <div class="box">
-        <a :href="item.homepage" target="_blank" class="link"
-          ><BIconLink45deg /><br />홈페이지 링크</a
-        >
-        <a :href="`tel:${item.telno}`"><BIconTelephoneFill /><br />{{ item.telno }}</a>
+      <a v-if="item.phoneno" class="tel" :href="`tel:${item.phoneno}`"
+        ><BIconTelephoneFill />{{ item.phoneno }}</a
+      >
+      <div class="tag">
+        <p class="tag-title">태그</p>
+        <p v-for="tag in item.tag.split(',')" :key="tag">#{{ tag }}</p>
       </div>
     </div>
   </div>
@@ -59,7 +56,6 @@ export default {
   width: calc(100% / 3 - 0.5rem);
   margin: 0.25rem;
   background: #{$c-white};
-  border: 1px solid #{$c-divider-dark-2};
   &-image {
     position: relative;
     height: 200px;
@@ -68,7 +64,7 @@ export default {
       position: absolute;
       top: 0;
       left: 50%;
-      height: 100%;
+      width: 100%;
       transform: translateX(-50%);
     }
   }
@@ -80,13 +76,13 @@ export default {
   }
 
   &:hover .card-text {
-    background: #722f8b;
+    background: #ff6b01;
     color: #{$c-white};
     .address {
       border-color: #{$c-white};
       button {
         background: #{$c-white};
-        color: #722f8b;
+        color: #ff6b01;
       }
     }
   }
@@ -112,7 +108,7 @@ export default {
     padding: 0.5rem 0.75rem;
     border: none;
     border-radius: 6px;
-    background: #722f8b;
+    background: #7d8600;
     color: white;
     cursor: pointer;
   }
@@ -120,23 +116,37 @@ export default {
 .date {
   font-size: 0.75rem;
 }
-.box {
+.tel {
   display: flex;
-  margin-top: auto;
-  padding-top: 0.75rem;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.875rem;
   svg {
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
     padding: 0.313rem;
     border-radius: 50%;
-    background: #722f8b;
+    background: #ff6b01;
     fill: #{$c-white};
   }
-  a {
-    display: block;
-    width: 50%;
-    font-size: 0.5rem;
-    text-align: center;
+}
+
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  font-size: 0.875rem;
+  &-title {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  p {
+    padding-right: 0.5rem;
+    &:last-child {
+      padding-right: 0;
+    }
   }
 }
 
@@ -150,11 +160,7 @@ export default {
   .card {
     width: 100%;
     margin: 0.5rem;
-    &-image {
-      height: 150px;
-    }
     &-text {
-      height: calc(100% - 150px);
       padding: 0.875rem;
     }
   }

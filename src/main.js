@@ -6,12 +6,14 @@ import Vue3Lottie from 'vue3-lottie'
 import 'vue3-lottie/dist/style.css'
 import { BootstrapIconsPlugin } from 'bootstrap-icons-vue'
 import axios from 'axios'
+import store from './store'
 
 const app = createApp(App)
 
 app.use(router)
 app.use(Vue3Lottie)
 app.use(BootstrapIconsPlugin)
+app.use(store)
 
 // axios 전역 설정
 app.config.globalProperties.$axios = axios

@@ -1,6 +1,6 @@
 <template>
   <div class="chuncheon">
-    <h3>강원도 춘천시 관내 문화축제 소개 페이지</h3>
+    <h3>🥔 강원도 춘천시 관내 문화축제 소개 페이지 🥔</h3>
     <div class="filter">
       <p class="total">총: {{ totalCount }}건</p>
       <select name="pageView" id="pageView" v-model="pageView">
@@ -53,8 +53,6 @@ export default {
      * 강원 춘천 문화 축제 데이터 load
      */
     async loadData() {
-      console.log('currentPage:', this.currentPage)
-      console.log('pageView:', this.pageView)
       const result = await getFestivalList({
         pageNo: this.currentPage,
         numOfRows: this.pageView

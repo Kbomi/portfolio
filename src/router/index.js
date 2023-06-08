@@ -14,6 +14,12 @@ const router = createRouter({
       name: 'chuncheon',
       // lazy-loaded
       component: () => import('../views/ChuncheonView.vue')
+    },
+    {
+      path: '/jeju-festival',
+      name: 'jeju',
+      // lazy-loaded
+      component: () => import('../views/JejuView.vue')
     }
   ]
 })

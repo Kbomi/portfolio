@@ -10,7 +10,21 @@
           <p class="title">강원도 춘천시 관내 문화축제</p>
           <p>
             <a href="https://www.data.go.kr/data/15112147/openapi.do#layer-api-guide">OPEN API</a>를
-            활용해서 강원도 춘천 문화축제 정보를 제공하는 페이지를 만들었습니다.
+            활용해서 강원도 춘천 문화축제 정보를 제공하는 페이지를 만들었습니다.<br />
+            pageView와 pagination을 구현했습니다.
+          </p>
+        </div>
+      </RouterLink>
+      <RouterLink to="/jeju-festival" class="card">
+        <div class="card-image">
+          <img src="@/assets/images/jeju-thumbnail.png" alt="제주 돌하르방을 만지는 이미지" />
+        </div>
+        <div class="card-text">
+          <p class="title">비짓제주 관광정보</p>
+          <p>
+            <a href="https://www.data.go.kr/data/15076361/openapi.do">OPEN API</a>를 활용해서
+            비짓제주에서 제공하는 제주 관공정보 페이지를 만들었습니다.<br />
+            infinite scroll을 구현했습니다.
           </p>
         </div>
       </RouterLink>
@@ -20,13 +34,18 @@
 
 <style scoped lang="scss">
 .card-list {
+  display: flex;
   margin-top: 1rem;
 }
 .card {
   display: block;
-  width: 40%;
+  width: calc(100% / 3 - 1.5rem);
+  margin-right: 0.5rem;
   padding: 0.75rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  &:last-child {
+    margin-right: 0;
+  }
   &-image {
     position: relative;
     height: 200px;

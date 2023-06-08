@@ -1,10 +1,21 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import Loading from './components/common/Loading.vue'
+import { mapGetters } from 'vuex'
+
+export default {
+  components: {
+    Loading
+  },
+  computed: {
+    ...mapGetters(['isLoading'])
+  }
+}
 </script>
 
 <template>
   <RouterView />
-
+  <Loading :isVisible="isLoading" />
   <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
