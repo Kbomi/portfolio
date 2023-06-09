@@ -35,11 +35,12 @@
 <style scoped lang="scss">
 .card-list {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 .card {
   display: block;
-  width: calc(100% / 3 - 1.5rem);
+  width: calc(100% / 2 - 1.5rem);
   margin-right: 0.5rem;
   padding: 0.75rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -65,6 +66,23 @@
     .title {
       font-size: 1rem;
       font-weight: bold;
+    }
+  }
+}
+
+@include tablet {
+  .card {
+    width: calc(100% / 3 - 1.5rem);
+  }
+}
+
+@include mobile {
+  .card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.875rem;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

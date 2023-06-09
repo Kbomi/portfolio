@@ -5,7 +5,7 @@ const api = apiInstance()
 function getJejuList(params) {
   return api
     .get(
-      `http://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${
+      `https://api.visitjeju.net/vsjApi/contents/searchList?apiKey=${
         import.meta.env.VITE_JEJU_API_KEY
       }&locale=kr&category=c1&${objectToParams(params)}`
     )
