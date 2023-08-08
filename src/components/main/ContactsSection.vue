@@ -18,12 +18,6 @@
         </a>
       </li>
       <li>
-        <a href="https://velog.io/@93rlaqhal" target="_blank">
-          <BIconCodeSquare />
-          <span>velog.io/@93rlaqhal<br />- 기술 블로그만 따로 분리해서 작성중입니다.</span>
-        </a>
-      </li>
-      <li>
         <a href="https://blog.naver.com/93rlaqhal" target="_blank">
           <BIconEmojiSunglasses />
           <span
@@ -60,7 +54,6 @@ export default {
 }
 ul {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   padding: 0;
   list-style: none;

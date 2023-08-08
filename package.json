@@ -11,6 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/vue3-flicking": "^4.11.0",
     "axios": "^1.4.0",
     "bootstrap-icons-vue": "^1.10.3",
     "vue": "^3.3.2",
