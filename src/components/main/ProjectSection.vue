@@ -1,8 +1,43 @@
 <template>
   <section class="project">
-    <h2>사이드프로젝트</h2>
+    <h2>개인 사이드프로젝트</h2>
     <Flicking class="card-list" :options="{ align: 'prev', circular: true }" :plugins="plugins">
-      <RouterLink to="/chuncheon-festival" class="card panel" key="0">
+      <a href="https://selloutpartners.com" target="_blank" class="card panel" key="0">
+        <div class="card-image">
+          <img src="@/assets/images/sellout.png" alt="셀아웃파트너스" />
+        </div>
+        <div class="card-text">
+          <p class="title">셀아웃 파트너스 원페이지 퍼블리싱</p>
+          <p>
+            셀아웃 파트너스 원페이지로 된 홈페이지 퍼블리싱을 했습니다.<br/>
+            크리에이터링크를 통해 만들었습니다.
+          </p>
+        </div>
+      </a>
+      <a href="https://www.kko-kkuri.com/new-dictionary" target="_blank" class="card panel" key="1">
+        <div class="card-image">
+          <img src="@/assets/images/dictionary.png" alt="소통사전" />
+        </div>
+        <div class="card-text">
+          <p class="title">소통사전 - 검색 페이지</p>
+          <p>
+            개인적으로 운영중인 블로그에 신조어 검색이라는 컨셉을 잡아서 검색 페이지를 만들었습니다.<br/>
+            네이버 검색 API를 활용했습니다.
+          </p>
+        </div>
+      </a>
+      <a href="https://www.kko-kkuri.com/baseball-game" target="_blank" class="card panel" key="2">
+        <div class="card-image">
+          <img src="@/assets/images/baseball.png" alt="야구게임 썸네일" />
+        </div>
+        <div class="card-text">
+          <p class="title">숫자 야구게임</p>
+          <p>
+            개인적으로 운영중인 블로그에 숫자 야구게임을 만들었습니다.
+          </p>
+        </div>
+      </a>
+      <RouterLink to="/chuncheon-festival" class="card panel" key="3">
         <div class="card-image">
           <img src="@/assets/images/chuncheon-thumbnail.png" alt="춘천역 표지판 이미지" />
         </div>
@@ -15,7 +50,7 @@
           </p>
         </div>
       </RouterLink>
-      <RouterLink to="/jeju-festival" class="card panel" key="1">
+      <RouterLink to="/jeju-festival" class="card panel" key="4">
         <div class="card-image">
           <img src="@/assets/images/jeju-thumbnail.png" alt="제주 돌하르방을 만지는 이미지" />
         </div>
@@ -28,29 +63,6 @@
           </p>
         </div>
       </RouterLink>
-      <a href="https://www.kko-kkuri.com/new-dictionary" target="_blank" class="card panel" key="2">
-        <div class="card-image">
-          <img src="@/assets/images/dictionary.png" alt="소통사전" />
-        </div>
-        <div class="card-text">
-          <p class="title">소통사전 - 검색 페이지</p>
-          <p>
-            개인적으로 운영중인 블로그에 신조어 검색이라는 컨셉을 잡아서 검색 페이지를 만들었습니다.<br/>
-            네이버 검색 API를 활용했습니다.
-          </p>
-        </div>
-      </a>
-      <a href="https://www.kko-kkuri.com/baseball-game" target="_blank" class="card panel" key="3">
-        <div class="card-image">
-          <img src="@/assets/images/baseball.png" alt="야구게임 썸네일" />
-        </div>
-        <div class="card-text">
-          <p class="title">숫자 야구게임</p>
-          <p>
-            개인적으로 운영중인 블로그에 숫자 야구게임을 만들었습니다.
-          </p>
-        </div>
-      </a>
       <template #viewport>
     <span class="flicking-arrow flicking-arrow-prev is-thin"></span>
     <span class="flicking-arrow flicking-arrow-next is-thin"></span>
